@@ -2,6 +2,8 @@
 #include <vector>
 #include "matrix.h"
 #include "graph_algorithm.h"
+#include <climits>
+#include <cmath>
 
 using namespace std;
 
@@ -42,11 +44,30 @@ int main()
     }
 
     //分支定界法使用示例:
-    
 
     //便宜算法使用示例:
 
     //Dijkstra算法使用示例:
+    cout << endl;
+    cout << "Dijkstra:" << endl;
+    input_matrix = {};
+    for(int i = 0; i < n; ++i)//这里输入的是有权矩阵
+    {
+        vector<int>row = {};
+        for(int j = 0; j < n; ++j)
+        {
+            int input_int = 0;
+            cin >> input_int;
+            row.push_back(input_int);
+        }
+        input_matrix.push_back(row);
+    }
+    vector<int>out_matrix_dijkstra = dijkstra(0,input_matrix);
+    for(int i = 0; i < out_matrix_dijkstra.size(); i++)
+    {
+        cout << out_matrix_dijkstra[i] << " ";
+    }
+    cout << endl;
 
     //Ford算法使用示例:
 

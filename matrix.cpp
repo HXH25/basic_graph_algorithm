@@ -145,3 +145,83 @@ void incidence_matrix::print()
         std::cout << std::endl;
     }
 }
+
+// 邻接矩阵转邻接表
+std::vector<std::vector<int>> adjacency_matrix::matrix_to_list()
+{
+    std::vector<std::vector<int>> list(data.size());
+    for(int i = 0; i < data.size(); i++)
+    {
+        for(int j = 0; j < data[i].size(); j++)
+        {
+            if(data[i][j] != 0)
+            {
+                list[i].push_back(j);
+            }
+        }
+    }
+    return list;
+}
+
+// adjacency_list 类的实现
+
+// 默认构造函数
+adjacency_list::adjacency_list()
+{
+}
+
+// 带参数的构造函数
+adjacency_list::adjacency_list(int size_row)
+{
+    data.resize(size_row);
+}
+
+// 从二维数组创建的构造函数
+adjacency_list::adjacency_list(const std::vector<std::vector<int>>& matrix)
+{
+    data = matrix;
+}
+
+// 重载[]运算符
+std::vector<int>& adjacency_list::operator[](int row)
+{
+    return data[row];
+}
+
+// 邻接表转邻接矩阵
+std::vector<std::vector<int>> adjacency_list::list_to_matrix()
+{
+    // 首先确定矩阵的大小
+    int n = data.size();
+    std::vector<std::vector<int>> matrix(n, std::vector<int>(n, 0));
+    
+    for(int i = 0; i < n; i++)
+    {
+        for(int j : data[i])
+        {
+            matrix[i][j] = 1;
+        }
+    }
+    
+    return matrix;
+}
+
+// size方法
+int adjacency_list::size()
+{
+    return data.size();
+}
+
+// print方法
+void adjacency_list::print()
+{
+    for(int i = 0; i < data.size(); ++i)
+    {
+        std::cout << i << ": ";
+        for(int j : data[i])
+        {
+            std::cout << j << " ";
+        }
+        std::cout << std::endl;
+    }
+}

@@ -11,3 +11,5 @@ std::vector<std::vector<int>> hamilton(adjacency_matrix graph);
 
 void branch_and_bound_solution();
 int branch_and_bound();
+
+std::vector<int> dijkstra(int start, std::vector<std::vector<int>> graph);

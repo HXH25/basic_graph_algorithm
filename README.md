@@ -3,3 +3,5 @@ an educational C++ program package that offers basic graph theory algorithm tool
 
 # 图论算法工具包
 这是一个简单的C++项目，涵盖了对于初学者来说常见的图论算法(更新中)
+
+# 作者非常非常非常非常非常非常非常菜

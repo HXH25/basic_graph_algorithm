@@ -22,7 +22,7 @@ web/
 
 ## 离线运行（Windows）
 
-### 方法 1（推荐）
+### 方法 1（一键启动）
 
 双击 `start_offline.bat`
 
@@ -55,11 +55,3 @@ python run_offline.py --host 127.0.0.1 --port 8000 --no-browser
 - `web/dist/graph_visualization_offline.zip`
 
 把这个 zip 发给别人后，对方解压并双击 `start_offline.bat` 就能离线使用。
-
-## 可选：发布为公开网页（GitHub Pages）
-
-1. 进入 GitHub 仓库 -> `Settings` -> `Pages`
-2. `Build and deployment` 选择 `Deploy from a branch`
-3. 分支选 `main`，目录选 `/ (root)`
-4. 保存，等待 1-2 分钟生成 URL
-

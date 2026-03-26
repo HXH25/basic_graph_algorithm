@@ -18,43 +18,8 @@ const graphSvg = document.getElementById("graphSvg");
 const adjacencyMatrixContainer = document.getElementById("adjacencyMatrixContainer");
 const incidenceMatrixContainer = document.getElementById("incidenceMatrixContainer");
 
-const tsinghuaLogo = document.getElementById("tsinghuaLogo");
-const logoFallback = document.getElementById("logoFallback");
-
 let currentMatrix = [];
 let matrixEditorSize = 0;
-
-function initLogo() {
-  const candidates = [
-    "./tsinghua_logo.png",
-    "./qinghua.png",
-    "./tsinghua.png",
-    "./logo.png",
-    "./校徽.png",
-    "../qinghua.png",
-    "../tsinghua.png",
-    "../logo.png",
-    "../校徽.png"
-  ];
-  let idx = 0;
-
-  const tryNext = () => {
-    if (idx >= candidates.length) {
-      tsinghuaLogo.classList.add("hidden");
-      logoFallback.classList.remove("hidden");
-      return;
-    }
-    tsinghuaLogo.src = candidates[idx];
-    idx += 1;
-  };
-
-  tsinghuaLogo.addEventListener("load", () => {
-    logoFallback.classList.add("hidden");
-    tsinghuaLogo.classList.remove("hidden");
-  });
-  tsinghuaLogo.addEventListener("error", tryNext);
-  tryNext();
-}
 
 function createMatrixEditor(size, preset) {
   matrixEditorContainer.innerHTML = "";
@@ -519,4 +484,3 @@ createMatrixEditor(4, [
   [0, 0, 0, 0]
 ]);
 updateStartNodeVisibility();
-initLogo();

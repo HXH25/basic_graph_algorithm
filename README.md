@@ -1,7 +1,65 @@
-# basic_graph_algorithm
-an educational C++ program package that offers basic graph theory algorithm tools such as Warshall、Dijkstra.
+# 图算法可视化（离线版）
 
-# 图论算法工具包
-这是一个简单的C++项目，涵盖了对于初学者来说常见的图论算法(更新中)
+这是一个可离线运行的图算法可视化程序，包含：
 
-# 作者非常非常非常非常非常非常非常菜
+- 图输入：先输入节点数，再在矩阵表格中填写邻接矩阵
+- 算法：`Warshall`、`Dijkstra`、`Hamilton`
+- 图渲染：节点编号、边编号、边权、单向/双向箭头
+- 矩阵联动：邻接矩阵、关联矩阵展示
+- 节点交互：点击节点可高亮相关边与邻接矩阵行列
+
+## 目录结构
+
+```text
+web/
+├─ index.html
+├─ style.css
+├─ app.js
+├─ tsinghua_logo.png
+├─ run_offline.py
+└─ start_offline.bat
+```
+
+## 离线运行（Windows）
+
+### 方法 1（推荐）
+
+双击 `start_offline.bat`
+
+- 自动启动本地服务
+- 自动打开浏览器
+- 默认地址：`http://127.0.0.1:8000`
+- 停止程序：回到命令行窗口按 `Ctrl + C`
+
+### 方法 2（命令行）
+
+```bash
+cd web
+python run_offline.py
+```
+
+可选参数：
+
+```bash
+python run_offline.py --host 127.0.0.1 --port 8000 --no-browser
+```
+
+## 一键打包（可分发 zip）
+
+在 `web` 目录双击：
+
+- `release.bat`
+
+脚本会生成：
+
+- `web/dist/graph_visualization_offline.zip`
+
+把这个 zip 发给别人后，对方解压并双击 `start_offline.bat` 就能离线使用。
+
+## 可选：发布为公开网页（GitHub Pages）
+
+1. 进入 GitHub 仓库 -> `Settings` -> `Pages`
+2. `Build and deployment` 选择 `Deploy from a branch`
+3. 分支选 `main`，目录选 `/ (root)`
+4. 保存，等待 1-2 分钟生成 URL
+

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图算法可视化</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <h1>图算法可视化</h1>
+      <div class="logo-wrap">
+        <img id="tsinghuaLogo" alt="清华大学校徽">
+        <span id="logoFallback" class="logo-fallback hidden">校徽未找到</span>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>1. 输入图</h2>
+      <p>先输入节点个数，系统会生成邻接矩阵表格。0 表示无边，正数表示边权。</p>
+      <div class="actions">
+        <label for="nodeCountInput">节点个数</label>
+        <input id="nodeCountInput" type="number" min="1" value="4">
+        <button id="generateTableBtn">生成矩阵表格</button>
+      </div>
+      <div id="matrixEditorContainer" class="table-wrap matrix-editor-wrap hidden"></div>
+      <div class="actions">
+        <button id="buildGraphBtn">确认矩阵并生成图</button>
+      </div>
+      <p id="inputError" class="error"></p>
+    </section>
+
+    <section id="algorithmSection" class="card hidden">
+      <h2>2. 选择算法</h2>
+      <div class="actions">
+        <label for="algorithmSelect">算法</label>
+        <select id="algorithmSelect">
+          <option value="none">仅展示图结构</option>
+          <option value="warshall">Warshall（可达闭包）</option>
+          <option value="dijkstra">Dijkstra（单源最短路）</option>
+          <option value="hamilton">Hamilton（路径搜索）</option>
+        </select>
+        <label for="startNodeInput" id="startNodeLabel">起点</label>
+        <input id="startNodeInput" type="number" min="0" value="0">
+        <button id="runAlgorithmBtn">运行算法</button>
+      </div>
+      <p id="algorithmError" class="error"></p>
+    </section>
+
+    <section id="resultSection" class="result-layout hidden">
+      <div class="card graph-card">
+        <h2>图可视化</h2>
+        <svg id="graphSvg" viewBox="0 0 760 520" aria-label="graph visualization"></svg>
+      </div>
+
+      <div class="card side-card">
+        <h2>矩阵</h2>
+        <h3>邻接矩阵（权重）</h3>
+        <div id="adjacencyMatrixContainer" class="table-wrap"></div>
+
+        <h3>关联矩阵（有向）</h3>
+        <div id="incidenceMatrixContainer" class="table-wrap"></div>
+      </div>
+    </section>
+
+    <section id="algoOutputSection" class="card hidden">
+      <h2>算法输出</h2>
+      <pre id="algoOutput"></pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

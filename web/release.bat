@@ -19,7 +19,7 @@ copy /y "app.js" "%STAGE_DIR%\" >nul
 copy /y "run_offline.py" "%STAGE_DIR%\" >nul
 copy /y "start_offline.bat" "%STAGE_DIR%\" >nul
 copy /y "README.md" "%STAGE_DIR%\" >nul
-if exist "tsinghua_logo.png" copy /y "tsinghua_logo.png" "%STAGE_DIR%\" >nul
+if exist "assets" xcopy /e /i /y "assets" "%STAGE_DIR%\assets\" >nul
 
 echo [release] creating zip package...
 if exist "%ZIP_PATH%" del /f /q "%ZIP_PATH%"

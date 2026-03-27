@@ -67,5 +67,91 @@ int main() {
 
   // 最长路径算法使用示例:
 
+  // 新增功能示例
+  cout << endl;
+  cout << "=== 新增功能示例 ===" << endl;
+
+  // 1. 环检测示例
+  cout << endl;
+  cout << "环检测: " << endl;
+  std::vector<std::vector<int>> graph_data = {
+    {1, 1, 0},
+    {-1, 0, 1},
+    {0, -1, -1}
+  };
+  incidence_matrix graph(graph_data);
+  std::vector<int> cycle = graph.find_cycle();
+  if (!cycle.empty()) {
+    cout << "找到环: ";
+    for (int v : cycle) {
+      cout << v << " ";
+    }
+    cout << endl;
+  } else {
+    cout << "图中没有环" << endl;
+  }
+
+  // 2. 生成树相关算法示例
+  cout << endl;
+  cout << "生成树相关算法: " << endl;
+  
+  // 创建树的关联矩阵
+  std::vector<std::vector<int>> tree_data = {
+    {1, 1},
+    {-1, 0},
+    {0, -1}
+  };
+  incidence_matrix tree_matrix(tree_data);
+  
+  // 创建tree对象
+  tree t(graph, tree_matrix);
+  
+  // 获取基本回路矩阵
+  cout << "基本回路矩阵: " << endl;
+  incidence_matrix circuit = t.get_basic_circuit_matrix();
+  circuit.print();
+  
+  // 获取基本割集矩阵
+  cout << "基本割集矩阵: " << endl;
+  incidence_matrix cut_set = t.get_basic_cut_set_matrix();
+  cut_set.print();
+  
+  // 计算生成树数量
+  int tree_num = t.get_tree_num();
+  cout << "生成树数量: " << tree_num << endl;
+  
+  // 计算有根树数量
+  int root_tree_num = t.get_root_tree_num(0);
+  cout << "以顶点0为根的有根树数量: " << root_tree_num << endl;
+
+  // 3. 矩阵处理函数示例
+  cout << endl;
+  cout << "矩阵处理函数: " << endl;
+  std::vector<std::vector<int>> matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+  };
+  
+  // 矩阵转置
+  std::vector<std::vector<int>> transposed = matrix_operations::transpose(matrix);
+  cout << "转置矩阵: " << endl;
+  for (auto& row : transposed) {
+    for (int val : row) {
+      cout << val << " ";
+    }
+    cout << endl;
+  }
+  
+  // 矩阵取负
+  std::vector<std::vector<int>> negated = matrix_operations::negate(matrix);
+  cout << "取负矩阵: " << endl;
+  for (auto& row : negated) {
+    for (int val : row) {
+      cout << val << " ";
+    }
+    cout << endl;
+  }
+
   return 0;
 }

@@ -1,42 +1,50 @@
-# 图算法可视化（离线版）
+# basic_graph_algorithm
 
-这是一个可离线运行的图算法可视化程序，包含：
+本仓库包含两部分：
 
-- 图输入：先输入节点数，再在矩阵表格中填写邻接矩阵
-- 算法：`Warshall`、`Dijkstra`、`Hamilton`
-- 图渲染：节点编号、边编号、边权、单向/双向箭头
-- 矩阵联动：邻接矩阵、关联矩阵展示
-- 节点交互：点击节点可高亮相关边与邻接矩阵行列
+- C++ 图算法实现（邻接矩阵/关联矩阵、Warshall、Hamilton、Dijkstra）
+- 前端离线可视化页面（`web/`）
 
 ## 目录结构
 
 ```text
-web/
-├─ index.html
-├─ style.css
-├─ app.js
-├─ tsinghua_logo.png
-├─ run_offline.py
-└─ start_offline.bat
+.
+├─ CMakeLists.txt
+├─ include/
+│  ├─ graph_algorithm.h
+│  └─ matrix.h
+├─ src/
+│  ├─ main.cpp
+│  ├─ graph_algorithm.cpp
+│  └─ matrix.cpp
+├─ web/
+│  ├─ index.html
+│  ├─ style.css
+│  ├─ app.js
+│  ├─ run_offline.py
+│  ├─ start_offline.bat
+│  ├─ release.bat
+│  └─ assets/
+└─ releases/
 ```
 
-## 离线运行（Windows）
+## C++ 构建与运行（CMake）
 
-### 方法 1（一键启动）
+```bash
+cmake -S . -B build
+cmake --build build
+```
 
-双击 `start_offline.bat`
+可执行文件为 `graph_algorithm_cli`，在构建目录下运行即可。
 
-- 自动启动本地服务
-- 自动打开浏览器
-- 默认地址：`http://127.0.0.1:8000`
-- 停止程序：回到命令行窗口按 `Ctrl + C`
-
-### 方法 2（命令行）
+## 网页离线运行
 
 ```bash
 cd web
 python run_offline.py
 ```
+
+默认地址：`http://127.0.0.1:8000`
 
 可选参数：
 
@@ -44,14 +52,14 @@ python run_offline.py
 python run_offline.py --host 127.0.0.1 --port 8000 --no-browser
 ```
 
-## 一键打包（可分发 zip）
+Windows 可双击 `web/start_offline.bat`。
 
-在 `web` 目录双击：
+## 网页离线打包
+
+在 `web` 目录运行或双击：
 
 - `release.bat`
 
-脚本会生成：
+会生成：
 
 - `web/dist/graph_visualization_offline.zip`
-
-把这个 zip 发给别人后，对方解压并双击 `start_offline.bat` 就能离线使用。

@@ -11,8 +11,17 @@
     <h1>图算法可视化</h1>
 
     <section class="card">
+      <h2>0. 输入类型</h2>
+      <div class="actions input-kind-row" role="radiogroup" aria-label="输入类型">
+        <label class="radio-label"><input type="radio" name="inputKind" value="graph" checked> 图（有向邻接矩阵，0 无边；若出现负权则仅可使用 Ford 算法）</label>
+        <label class="radio-label"><input type="radio" name="inputKind" value="tree"> 树（无向，表格与图相同；边权均为非负，对角线可填叶权供 Huffman）</label>
+      </div>
+    </section>
+
+    <section class="card">
       <h2>1. 输入图</h2>
-      <p>先输入节点个数，系统会生成邻接矩阵表格。0 表示无边，正数表示边权。</p>
+      <p id="inputHelpGraph" class="input-help">先输入节点个数，系统会生成邻接矩阵表格。<strong>图模式</strong>：0 表示无边，正整数为边权；若输入负权，仅 Ford（ Bellman-Ford ）可用。</p>
+      <p id="inputHelpTree" class="input-help hidden"><strong>树模式</strong>：矩阵需对称，对角建议为 0（边权只在 i≠j）；共有 n−1 条正权边且连通无环。对角线可填非负整数作为 Huffman 叶权。</p>
       <div class="actions">
         <label for="nodeCountInput">节点个数</label>
         <input id="nodeCountInput" type="number" min="1" value="4">
@@ -34,6 +43,9 @@
           <option value="warshall">Warshall（可达闭包）</option>
           <option value="dijkstra">Dijkstra（单源最短路）</option>
           <option value="hamilton">Hamilton（路径搜索）</option>
+          <option value="kruskal">Kruskal（无向最小生成树）</option>
+          <option value="tsp">旅行商 TSP（DFS，最小权回路）</option>
+          <option value="ford">Ford / Bellman-Ford（含负权）</option>
         </select>
         <label for="startNodeInput" id="startNodeLabel">起点</label>
         <input id="startNodeInput" type="number" min="0" value="0">

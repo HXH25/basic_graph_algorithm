@@ -16,6 +16,7 @@ echo [release] copying files...
 copy /y "index.html" "%STAGE_DIR%\" >nul
 copy /y "style.css" "%STAGE_DIR%\" >nul
 copy /y "app.js" "%STAGE_DIR%\" >nul
+if exist "background.jpg" copy /y "background.jpg" "%STAGE_DIR%\" >nul
 copy /y "run_offline.py" "%STAGE_DIR%\" >nul
 copy /y "start_offline.bat" "%STAGE_DIR%\" >nul
 copy /y "README.md" "%STAGE_DIR%\" >nul

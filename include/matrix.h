@@ -3,27 +3,28 @@
 #include <vector>
 
 // 矩阵处理函数声明
-namespace matrix_operations {
-    // 1. 列交换
-    void swap_columns(std::vector<std::vector<int>>& matrix, int col1, int col2);
-    
-    // 2. 只通过初等行变换把一个矩阵变为rref（行最简形）
-    void to_rref(std::vector<std::vector<int>>& matrix);
-    
-    // 3. 把一个rref矩阵分成单位阵和其他部分
-    std::pair<std::vector<std::vector<int>>, std::vector<std::vector<int>>> split_rref(const std::vector<std::vector<int>>& matrix);
-    
-    // 4. 把一个矩阵转置
-    std::vector<std::vector<int>> transpose(const std::vector<std::vector<int>>& matrix);
-    
-    // 5. 把一个矩阵的所有矩阵元全变成负数
-    std::vector<std::vector<int>> negate(const std::vector<std::vector<int>>& matrix);
-    
-    // 6. 求一个矩阵的行列式
-    int determinant(const std::vector<std::vector<int>>& matrix);
-    
-    // 7. 求两个矩阵的乘法
-    std::vector<std::vector<int>> multiply(const std::vector<std::vector<int>>& matrix1, const std::vector<std::vector<int>>& matrix2);
+namespace matrix_operations
+{
+  // 1. 列交换
+  void swap_columns(std::vector<std::vector<int>> &matrix, int col1, int col2);
+
+  // 2. 只通过初等行变换把一个矩阵变为rref（行最简形）
+  void to_rref(std::vector<std::vector<int>> &matrix);
+
+  // 3. 把一个rref矩阵分成单位阵和其他部分
+  std::pair<std::vector<std::vector<int>>, std::vector<std::vector<int>>> split_rref(const std::vector<std::vector<int>> &matrix);
+
+  // 4. 把一个矩阵转置
+  std::vector<std::vector<int>> transpose(const std::vector<std::vector<int>> &matrix);
+
+  // 5. 把一个矩阵的所有矩阵元全变成负数
+  std::vector<std::vector<int>> negate(const std::vector<std::vector<int>> &matrix);
+
+  // 6. 求一个矩阵的行列式
+  int determinant(const std::vector<std::vector<int>> &matrix);
+
+  // 7. 求两个矩阵的乘法
+  std::vector<std::vector<int>> multiply(const std::vector<std::vector<int>> &matrix1, const std::vector<std::vector<int>> &matrix2);
 }
 
 class adjacency_matrix // 邻接矩阵
@@ -41,13 +42,13 @@ public:
   adjacency_matrix();
   adjacency_matrix(int size_row, int size_column);
   adjacency_matrix(const std::vector<std::vector<int>> &matrix);
-
+  bool if_nonarrow();
   int size();
   void print();
   std::vector<int> find_cycle();
-  bool dfs_cycle(std::vector<std::vector<int>>& adj, int current, 
-                 std::vector<bool>& visited, std::vector<int>& parent, 
-                 std::vector<int>& cycle);
+  bool dfs_cycle(std::vector<std::vector<int>> &adj, int current,
+                 std::vector<bool> &visited, std::vector<int> &parent,
+                 std::vector<int> &cycle);
 };
 
 class incidence_matrix // 关联矩阵
@@ -64,14 +65,14 @@ public:
   // 重载[]运算符
   std::vector<int> &operator[](int row);
 
-  std::vector<std::vector<int>> in_to_ad();
+  std::vector<std::vector<int>> in_to_ad() const;
 
   int size();
   void print();
   std::vector<int> find_cycle();
-  bool dfs_cycle(std::vector<std::vector<int>>& adj, int current, 
-                 std::vector<bool>& visited, std::vector<int>& parent, 
-                 std::vector<int>& cycle);
+  bool dfs_cycle(std::vector<std::vector<int>> &adj, int current,
+                 std::vector<bool> &visited, std::vector<int> &parent,
+                 std::vector<int> &cycle);
   std::vector<std::vector<int>> get_data();
 };
 
@@ -97,6 +98,7 @@ private:
   incidence_matrix tree_matrix;
   incidence_matrix basic_circuit_matrix;
   incidence_matrix basic_cut_set_matrix;
+
 public:
   tree();
   tree(incidence_matrix graph_matrix, incidence_matrix tree_matrix);

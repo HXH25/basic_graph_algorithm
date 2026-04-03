@@ -1,0 +1,20 @@
+[
+{
+  "directory": "D:/MAIN/Class-2026Spring/DM2/DMCodingProject/basic_graph_algorithm-Version1.3_test/build",
+  "command": "C:\\PROGRA~1\\MICROS~4\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\cl.exe  /nologo /TP -ID:\\MAIN\\Class-2026Spring\\DM2\\DMCodingProject\\basic_graph_algorithm-Version1.3_test\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /FoCMakeFiles\\graph_algorithms.dir\\src\\graph_algorithm.cpp.obj /FdCMakeFiles\\graph_algorithms.dir\\graph_algorithms.pdb /FS -c D:\\MAIN\\Class-2026Spring\\DM2\\DMCodingProject\\basic_graph_algorithm-Version1.3_test\\src\\graph_algorithm.cpp",
+  "file": "D:/MAIN/Class-2026Spring/DM2/DMCodingProject/basic_graph_algorithm-Version1.3_test/src/graph_algorithm.cpp",
+  "output": "D:/MAIN/Class-2026Spring/DM2/DMCodingProject/basic_graph_algorithm-Version1.3_test/build/CMakeFiles/graph_algorithms.dir/src/graph_algorithm.cpp.obj"
+},
+{
+  "directory": "D:/MAIN/Class-2026Spring/DM2/DMCodingProject/basic_graph_algorithm-Version1.3_test/build",
+  "command": "C:\\PROGRA~1\\MICROS~4\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\cl.exe  /nologo /TP -ID:\\MAIN\\Class-2026Spring\\DM2\\DMCodingProject\\basic_graph_algorithm-Version1.3_test\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /FoCMakeFiles\\graph_algorithms.dir\\src\\matrix.cpp.obj /FdCMakeFiles\\graph_algorithms.dir\\graph_algorithms.pdb /FS -c D:\\MAIN\\Class-2026Spring\\DM2\\DMCodingProject\\basic_graph_algorithm-Version1.3_test\\src\\matrix.cpp",
+  "file": "D:/MAIN/Class-2026Spring/DM2/DMCodingProject/basic_graph_algorithm-Version1.3_test/src/matrix.cpp",
+  "output": "D:/MAIN/Class-2026Spring/DM2/DMCodingProject/basic_graph_algorithm-Version1.3_test/build/CMakeFiles/graph_algorithms.dir/src/matrix.cpp.obj"
+},
+{
+  "directory": "D:/MAIN/Class-2026Spring/DM2/DMCodingProject/basic_graph_algorithm-Version1.3_test/build",
+  "command": "C:\\PROGRA~1\\MICROS~4\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\cl.exe  /nologo /TP -ID:\\MAIN\\Class-2026Spring\\DM2\\DMCodingProject\\basic_graph_algorithm-Version1.3_test\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /FoCMakeFiles\\graph_algorithm_cli.dir\\src\\main.cpp.obj /FdCMakeFiles\\graph_algorithm_cli.dir\\ /FS -c D:\\MAIN\\Class-2026Spring\\DM2\\DMCodingProject\\basic_graph_algorithm-Version1.3_test\\src\\main.cpp",
+  "file": "D:/MAIN/Class-2026Spring/DM2/DMCodingProject/basic_graph_algorithm-Version1.3_test/src/main.cpp",
+  "output": "D:/MAIN/Class-2026Spring/DM2/DMCodingProject/basic_graph_algorithm-Version1.3_test/build/CMakeFiles/graph_algorithm_cli.dir/src/main.cpp.obj"
+}
+]
